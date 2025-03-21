@@ -17,6 +17,9 @@ final class Task extends Model
         'status' => TaskStatus::class,
     ];
 
+    /**
+     * @return BelongsTo<Employee, Task>
+     */
     public function employee(): BelongsTo
     {
         return $this->belongsTo(Employee::class);

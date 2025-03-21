@@ -12,6 +12,9 @@ final class Employee extends Model
 {
     protected $guarded = ['id'];
 
+    /**
+     * @return HasMany<Task, $this>
+     */
     public function tasks(): HasMany
     {
         return $this->hasMany(Task::class);
