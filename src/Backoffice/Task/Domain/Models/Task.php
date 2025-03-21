@@ -18,7 +18,7 @@ final class Task extends Model
     ];
 
     /**
-     * @return BelongsTo<Employee, Task>
+     * @return BelongsTo<Employee, $this>
      */
     public function employee(): BelongsTo
     {
