@@ -5,5 +5,4 @@ use Lightit\Shared\App\Exceptions\Http\InvalidActionException;
 
 Route::get('invalid', static fn() => throw new InvalidActionException("Is not valid"));
 
-Route::get('{unknown}', static fn () => view('welcome'))->where('unknown', '^(?!api).*$');
-
+Route::get('{unknown}', static fn() => view('layouts/app'))->where('unknown', '^(?!api).*$');
