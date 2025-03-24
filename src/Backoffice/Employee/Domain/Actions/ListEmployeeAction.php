@@ -13,6 +13,7 @@ final class ListEmployeeAction
 {
     /**
      * List all employees
+     *
      * @return Collection<int, Model>
      */
     public function execute(): Collection
