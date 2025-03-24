@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Lightit\Backoffice\Employee\Domain\Actions;
 
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Lightit\Backoffice\Employee\Domain\Models\Employee;
 use Spatie\QueryBuilder\QueryBuilder;
 
@@ -12,6 +13,7 @@ final class ListEmployeeAction
 {
     /**
      * List all employees
+     * @return Collection<int, Model>
      */
     public function execute(): Collection
     {
