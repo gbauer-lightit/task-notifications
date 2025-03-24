@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lightit\Backoffice\Employee\App\Controllers;
 
 use Illuminate\Http\JsonResponse;
@@ -10,6 +12,7 @@ final class ListEmployeeController
     public function __invoke(ListEmployeeAction $listEmployeeAction): JsonResponse
     {
         $employees = $listEmployeeAction->execute();
+
         return response()
             ->success($employees)
             ->respond();

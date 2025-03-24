@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lightit\Backoffice\Employee\Domain\Actions;
 
 use Illuminate\Database\Eloquent\Collection;
@@ -8,11 +10,8 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 final class ListEmployeeAction
 {
-
     /**
      * List all employees
-     *
-     * @return Collection
      */
     public function execute(): Collection
     {
