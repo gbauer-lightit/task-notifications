@@ -12,8 +12,6 @@ final class ListEmployeeAction
 {
     /**
      * List all employees
-     *
-     * @return Collection
      */
     public function execute(): Collection
     {
