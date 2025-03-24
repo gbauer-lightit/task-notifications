@@ -11,10 +11,8 @@ final class ListEmployeeController
 {
     public function __invoke(ListEmployeeAction $listEmployeeAction): JsonResponse
     {
-        $employees = $listEmployeeAction->execute();
-
-        return responder()
-            ->success($employees)
-            ->respond();
+        return response()->json([
+            'message' => 'List of employees',
+        ]);
     }
 }

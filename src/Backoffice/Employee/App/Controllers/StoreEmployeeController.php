@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Lightit\Backoffice\Employee\App\Controllers;
 
+use Illuminate\Http\JsonResponse;
+
 final class StoreEmployeeController
 {
-    public function __invoke()
+    public function __invoke(): JsonResponse
     {
         return response()->json([
             'message' => 'Employee created',
