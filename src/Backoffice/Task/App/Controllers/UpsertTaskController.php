@@ -6,12 +6,12 @@ namespace Lightit\Backoffice\Task\App\Controllers;
 
 use Illuminate\Http\JsonResponse;
 
-final class ListTaskController
+final class UpsertTaskController
 {
     public function __invoke(): JsonResponse
     {
         return response()->json([
-            'message' => 'List of tasks',
+            'message' => 'Task created',
         ]);
     }
 }

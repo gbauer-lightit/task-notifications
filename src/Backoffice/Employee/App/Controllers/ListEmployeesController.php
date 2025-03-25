@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Lightit\Backoffice\Employee\App\Controllers;
 
 use Illuminate\Http\JsonResponse;
-use Lightit\Backoffice\Employee\Domain\Actions\ListEmployeeAction;
 
-final class ListEmployeeController
+final class ListEmployeesController
 {
     public function __invoke(): JsonResponse
     {

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Lightit\Backoffice\Employee\Domain\Models\Employee;
 use Spatie\QueryBuilder\QueryBuilder;
 
-final class ListEmployeeAction
+final class ListEmployeesAction
 {
     /**
      * List all employees

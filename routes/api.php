@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\Route;
 use Lightit\Backoffice\Users\App\Controllers\{
     DeleteUserController, GetUserController, ListUserController, StoreUserController
 };
-use Lightit\Backoffice\Employee\App\Controllers\ListEmployeeController;
+use Lightit\Backoffice\Employee\App\Controllers\ListEmployeesController;
 use Lightit\Backoffice\Employee\App\Controllers\StoreEmployeeController;
-use Lightit\Backoffice\Task\App\Controllers\ListTaskController;
-use Lightit\Backoffice\Task\App\Controllers\StoreTaskController;
+use Lightit\Backoffice\Task\App\Controllers\ListTasksController;
+use Lightit\Backoffice\Task\App\Controllers\UpsertTaskController;
 
 
 /*
@@ -44,12 +44,12 @@ Route::prefix('employees')
     ->name('employees.')
     ->group(static function () {
         Route::post('/', StoreEmployeeController::class)->name('store');
-        Route::get('/', ListEmployeeController::class);
+        Route::get('/', ListEmployeesController::class);
     });
 
 Route::prefix('tasks')
     ->name('tasks.')
     ->group(static function () {
-        Route::get('/', ListTaskController::class);
-        Route::post('/', StoreTaskController::class)->name('store');
+        Route::get('/', ListTasksController::class);
+        Route::post('/', UpsertTaskController::class)->name('store');
     });
