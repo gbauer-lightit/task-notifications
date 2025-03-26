@@ -4,6 +4,19 @@ declare(strict_types=1);
 
 namespace Lightit\Backoffice\Task\App\Transformers;
 
-final class TaskTransformer
+use Flugg\Responder\Transformers\Transformer;
+use Lightit\Backoffice\Task\Domain\Models\Task;
+
+final class TaskTransformer extends Transformer
 {
+    public function transform(Task $task): array
+    {
+        return [
+            'id' => $task->id,
+            'title' => $task->title,
+            'description' => $task->description,
+            'status' => $task->status,
+            'employeeId' => $task->employee_id,
+        ];
+    }
 }

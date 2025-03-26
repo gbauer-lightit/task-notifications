@@ -4,6 +4,17 @@ declare(strict_types=1);
 
 namespace Lightit\Backoffice\Employee\App\Transformers;
 
-final class EmployeesTransformer
+use Flugg\Responder\Transformers\Transformer;
+use Lightit\Backoffice\Employee\Domain\Models\Employee;
+
+final class EmployeesTransformer extends Transformer
 {
+    public function transform(Employee $employee): array
+    {
+        return [
+            'id' => $employee->id,
+            'name' => $employee->name,
+            'email' => $employee->email,
+        ];
+    }
 }
