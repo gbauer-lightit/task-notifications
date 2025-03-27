@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Lightit\Backoffice\Employee\Domain\Models\Employee;
 use Lightit\Backoffice\Task\Domain\Enums\TaskStatus;
 
-final class Task extends Model
+class Task extends Model
 {
     protected $guarded = ['id'];
 
