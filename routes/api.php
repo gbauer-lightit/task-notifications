@@ -44,12 +44,12 @@ Route::prefix('employees')
     ->name('employees.')
     ->group(static function () {
         Route::post('/', StoreEmployeeController::class)->name('store');
-        Route::get('/', ListEmployeesController::class);
+        Route::get('/', ListEmployeesController::class)->name('list');
     });
 
 Route::prefix('tasks')
     ->name('tasks.')
     ->group(static function () {
-        Route::get('/', ListTasksController::class);
+        Route::get('/', ListTasksController::class)->name('list');
         Route::post('/', UpsertTaskController::class)->name('store');
     });

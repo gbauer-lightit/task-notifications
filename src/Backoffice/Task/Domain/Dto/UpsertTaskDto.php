@@ -9,12 +9,11 @@ use Lightit\Backoffice\Task\Domain\Enums\TaskStatus;
 final class UpsertTaskDto
 {
     public function __construct(
-        public string     $title,
-        public string     $description,
+        public string $title,
+        public string $description,
         public TaskStatus $status,
-        public int        $employee_id,
-        public int|null   $id = null,
-    )
-    {
+        public int $employee_id,
+        public int|null $id = null,
+    ) {
     }
 }

@@ -14,11 +14,10 @@ final class UpsertTaskAction
     public function execute(UpsertTaskDto $dto): Task
     {
         $task = Task::updateOrCreate(
-            ['id' => $dto->id],
             [
                 'title' => $dto->title,
                 'description' => $dto->description,
-                'status' => $dto->status,
+                'status' => $dto->status->value,
                 'employee_id' => $dto->employee_id,
             ]
         );

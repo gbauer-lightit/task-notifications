@@ -62,7 +62,7 @@
 
             select.innerHTML = '<option value="">Select Employee</option>';
 
-            fetch('/employees', {
+            fetch('{{ route('employees.list') }}', {
                 headers: {
                     'Accept': 'application/json',
                     'X-Requested-With': 'XMLHttpRequest'
