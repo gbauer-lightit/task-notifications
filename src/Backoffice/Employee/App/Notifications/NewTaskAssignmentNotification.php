@@ -4,15 +4,19 @@ declare(strict_types=1);
 
 namespace Lightit\Backoffice\Employee\App\Notifications;
 
+use Illuminate\Notifications\Messages\MailMessage;
+
 final class NewTaskAssignmentNotification extends TaskAssignmentNotification
 {
-    public function getContent(): string
+    protected function getMailMessage(): MailMessage
     {
-        return 'You have been assigned a new task!';
-    }
-
-    public function getSubject(): string
-    {
-        return 'New task assigned!';
+        return new MailMessage()
+            ->from($this->getFromAddress(), $this->getFromName())
+            ->subject('New Task Assigned')
+            ->markdown('mail.assigned-task', [
+                'header' => 'New Task Assigned',
+                'title' => $this->task->title,
+                'description' => $this->task->description,
+            ]);
     }
 }

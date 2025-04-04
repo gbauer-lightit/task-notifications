@@ -16,28 +16,34 @@ abstract class TaskAssignmentNotification extends Notification implements Should
 
     public function __construct(
         protected readonly Task $task,
-    ) {
+    )
+    {
     }
 
-    /**
-     * @return array<string>
-     */
-    public function via(object $notifiable): array
+    public function via(): array
     {
         return ['mail'];
     }
 
-    abstract protected function getSubject(): string;
-
-    abstract protected function getContent(): string;
-
     public function toMail(object $notifiable): MailMessage
     {
-        return new MailMessage()
-            ->subject($this->getSubject())
-            ->view('mail.assigned-task', [
-                'task' => $this->task,
-                'content' => $this->getContent(),
-            ]);
+        return $this->getMailMessage();
     }
+
+    abstract protected function getMailMessage(): MailMessage;
+
+    protected function getFromAddress(): string
+    {
+        $address = config('mail.from.address');
+
+        return (is_string($address) && !empty($address)) ? $address : 'default@example.com';
+    }
+
+    protected function getFromName(): string
+    {
+        $name = config('mail.from.name');
+
+        return (is_string($name) && !empty($name)) ? $name : 'Default Name';
+    }
+
 }
