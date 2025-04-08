@@ -89,7 +89,7 @@
     function loadTasks(select) {
         if (tasksLoaded) return;
 
-        fetch('/tasks', {
+        fetch('{{ route('tasks.list') }}', {
             headers: {
                 'Accept': 'application/json',
                 'X-Requested-With': 'XMLHttpRequest'
