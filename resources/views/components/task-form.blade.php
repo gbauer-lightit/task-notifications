@@ -154,15 +154,19 @@
         e.preventDefault();
         const formData = new FormData(this);
         const action = formData.get('action');
+        let url = '{{ route('tasks.store') }}';
+        let method = 'POST';
 
         if (action === 'update') {
             const taskId = formData.get('task_id');
             formData.append('id', taskId);
+            formData.append('_method', 'PUT');
+            url = '/api/tasks/' + taskId;
         }
         formData.delete('task_id');
 
-        fetch('{{ route('tasks.store') }}', {
-            method: 'POST',
+        fetch(url, {
+            method: method,
             body: formData,
             headers: {
                 'Accept': 'application/json',
