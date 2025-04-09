@@ -39,7 +39,7 @@ class SecurityHeaders
                 'Content-Security-Policy',
                 "default-src 'self';" .
                 "script-src 'self' 'unsafe-inline' 'unsafe-eval' http://127.0.0.1:5173;" .
-                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com data:;" .
+                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;" .
                 "connect-src 'self' ws://127.0.0.1:5173 http://127.0.0.1:5173;" .
                 "font-src 'self' https://fonts.gstatic.com data:;" .
                 "img-src 'self' data:;"
@@ -49,7 +49,7 @@ class SecurityHeaders
                 'Content-Security-Policy',
                 "default-src 'self';" .
                 "script-src 'self' https://unpkg.com;" .
-                "style-src 'self' https://fonts.googleapis.com;" .
+                "style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com;" .
                 "font-src 'self' https://fonts.gstatic.com;"
             );
         }
